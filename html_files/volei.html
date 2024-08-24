@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scoreboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            /* margin: 0px; */
+            padding-top: 30px;
+        }
+
+        /* Estilos do conteúdo principal */
+        .team {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 0px;
+        }
+
+        .team .label {
+            font-weight: bold;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Align items vertically */
+            margin: 0px 10px;
+        }
+
+        .team .controls {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Align items vertically */
+            flex-direction: column; /* Arrange buttons vertically */
+        }
+
+        .team button {
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+
+        .team .plus {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .team .minus {
+            background-color: #F44336;
+            color: white;
+        }
+
+        .serving {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Align items vertically */
+            flex-direction: row; /* Arrange buttons vertically */
+        }
+
+        .serving .label
+        {
+            display: flex;
+            transform: rotate(-90deg);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .serving button {
+            width: 200px;
+            height: 80px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+
+        h2 {
+            margin: 20px 0;
+            text-align: center; /* Center the team names */
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Topdown -->
+    <h2>LOCAL</h2>
+    <div class="team">
+        <div class="controls">
+            <div class="label">SCORE</div>
+            <button class="plus">+1</button>
+            <button class="minus">-1</button>
+        </div>
+        <div class="controls">
+            <div class="label">SETS WON</div>
+            <button class="plus">+1</button>
+            <button class="minus">-1</button>
+        </div>
+        <div class="controls">
+            <div class="label">T.O.L.</div>
+            <button class="plus">+1</button>
+            <button class="minus">-1</button>
+        </div>
+    </div>
+
+    <div class="serving">
+        <div class="components">
+            <div class="label">SERVING</div>
+        </div>
+        <div class="components">
+            <button>&uarr;</button>
+            <button>None</button>
+            <button>&darr;</button>
+        </div>
+    </div>
+
+    <div class="team">
+        <div class="controls">
+            <button class="plus">+1</button>
+            <button class="minus">-1</button>
+            <div class="label">SCORE</div>
+        </div>
+        <div class="controls">
+            <button class="plus">+1</button>
+            <button class="minus">-1</button>
+            <div class="label">SETS WON</div>
+        </div>
+        <div class="controls">
+            <button class="plus">+1</button>
+            <button class="minus">-1</button>
+            <div class="label">T.O.L.</div>
+        </div>
+    </div>
+    <h2>VISITANTES</h2>
+</body>
+</html>

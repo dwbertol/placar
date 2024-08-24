@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 30px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        .container {
+            display: inline-block;
+        }
+
+        .main-clock {
+           display: flex;
+           justify-content: center; /* Center horizontally
+           /* align-items: center; /* Align items vertically */
+           /* margin: 20px 0;*/
+            flex-direction: row; /* Arrange buttons vertically*/
+        }
+
+        .main-clock .controls {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Align items vertically */
+            flex-direction: column; /* Arrange buttons vertically */
+        }
+        
+        .button {
+            width: 130px;
+            height: 100px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .button-green {
+            background-color: #00cc00;
+        }
+        .button-red {
+            background-color: #ff6666;
+        }
+        .button-gray {
+            background-color: #d9d9d9;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>MAIN CLOCK</h1>
+    <div class="main-clock">
+        <div class="controls">
+            <button class="button button-green">Start</button>
+            <button class="button button-red">Stop</button>
+        </div>
+        <div class="controls">
+            <button class="button button-gray">Timeout<br>(30)</button>            
+            <button class="button button-gray">Timeout<br>(1:00)</button>
+        </div>
+    </div>
+
+</body>
+</html>

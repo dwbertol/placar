@@ -1,0 +1,49 @@
+#include "lwip/apps/httpd.h"
+#include "pico/stdlib.h"
+#include "pico/cyw43_arch.h"
+#include "lwipopts.h"
+#include "ssi.h"
+#include "cgi.h"
+
+// WIFI Credentials - take care if pushing to github!
+const char WIFI_SSID[] = "NET_2GF027D0";
+const char WIFI_PASSWORD[] = "E2F027D0";
+
+int main() {
+    stdio_init_all();
+
+    cyw43_arch_init();
+
+    cyw43_arch_enable_sta_mode();
+
+    // Connect to the WiFI network - loop until connected
+    while(cyw43_arch_wifi_connect_timeout_ms(WIFI_SSID, WIFI_PASSWORD, CYW43_AUTH_WPA2_AES_PSK, 30000) != 0){
+        printf("Attempting to connect...\n");
+    }
+    // Print a success message once connected
+    printf("Connected! \n");
+    
+    cyw43_t cyw43_state;
+    uint8_t mac[6];
+    cyw43_wifi_get_mac (&cyw43_state, CYW43_ITF_AP, mac);
+    
+    printf ("IP address: ");
+    for( int i = 0; i < 6; i++ )
+    {
+        printf("%" PRIu8 ":", mac[i]);
+    }
+    printf ("\n");
+    
+    // Initialise web server
+    httpd_init();
+    printf("Http server initialised\n");
+
+    // Configure SSI and CGI handler
+    ssi_init(); 
+    printf("SSI Handler initialised\n");
+    cgi_init();
+    printf("CGI Handler initialised\n");
+    
+    // Infinite loop
+    while(1);
+}
