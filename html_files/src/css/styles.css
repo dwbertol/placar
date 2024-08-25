@@ -61,29 +61,17 @@ main {
     font-size: 12px;
 }
 
-#side_items {
+#side-items {
     display: flex;
     flex-direction: column;
     gap: 8px;
     list-style: none;
 }
-
-.side-item {
-    border-radius: 8px;
-    padding: 14px;
-    cursor: pointer;
+#side-items a {
+    text-decoration: none;
 }
 
-.side-item.active {
-    background-color: #4f46e5;
-}
-
-.side-item:hover:not(.active),
-#logout_btn:hover {
-    background-color: #e3e9f7;
-}
-
-.side-item a {
+#side-items a .side-item {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -91,17 +79,33 @@ main {
     color: #0a0a0a;
 }
 
-.side-item.active a {
-    color: #e3e9f7;
-}
-
-.side-item a i {
+#side-items a .side-item i {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 20px;
     height: 20px;
 }
+
+#side-items a .side-item {
+    border-radius: 8px;
+    padding: 14px;
+    cursor: pointer;
+}
+
+#side-items a .side-item.active {
+    background-color: #4f46e5;
+}
+
+#side-items a .side-item:hover:not(.active),
+#logout_btn:hover {
+    background-color: #e3e9f7;
+}
+
+#side-items a .side-item.active a {
+    color: #e3e9f7;
+}
+
 
 #logout {
     border-top: 1px solid #e3e9f7;

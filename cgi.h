@@ -16,7 +16,7 @@ const char * cgi_led_handler(int iIndex, int iNumParams, char *pcParam[], char *
     }
     
     // Send the index page back to the user
-    return "/index.shtml";
+    return "#";
 }
 
 // tCGI Struct

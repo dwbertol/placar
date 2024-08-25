@@ -17,13 +17,11 @@ meusLinks.forEach(function( a ){
 function onCliqueiNoLink(){
   
   /// `this` dentro dessa função é a tag `A` que foi clicada.
-  // console.log( this , this.parentNode );
-
-  /// `this` dentro dessa função é a tag `A` que foi clicada.
   Array.from(document.getElementsByClassName('side-item')).forEach( function( a ){
       a.classList.remove('active');
   });
 
-  this.parentNode.classList.add('active');
-
+  Array.from(this.getElementsByClassName('side-item')).forEach( function( a ){
+    a.classList.add('active');
+  });
 }

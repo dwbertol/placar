@@ -6,8 +6,8 @@
 #include "cgi.h"
 
 // WIFI Credentials - take care if pushing to github!
-const char WIFI_SSID[] = "NET_2GF027D0";
-const char WIFI_PASSWORD[] = "E2F027D0";
+const char WIFI_SSID[] = "SSID";
+const char WIFI_PASSWORD[] = "PASSWORD";
 
 int main() {
     stdio_init_all();
