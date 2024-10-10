@@ -5,9 +5,12 @@ else()
     set(USERHOME $ENV{HOME})
 endif()
 set(sdkVersion 2.0.0)
-set(toolchainVersion 13_2_Rel1)
+set(toolchainVersion 13_3_Rel1)
 set(picotoolVersion 2.0.0)
-include(${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+if (EXISTS ${picoVscode})
+    include(${picoVscode})
+endif()
 # ====================================================================================
 cmake_minimum_required(VERSION 3.13)
 
@@ -15,6 +18,8 @@ set(PROGRAM_NAME pico_w_webserver)
 set(PICO_BOARD pico_w CACHE STRING "Board type")
 
 include(pico_sdk_import.cmake)
+
+add_subdirectory(sreglib)
 
 project(pico_w_webserver)
 
@@ -39,6 +44,7 @@ target_link_libraries(${PROGRAM_NAME}
     pico_lwip_http
     pico_stdlib
     hardware_adc
+    ShiftRegister74HC595
 )
 
 pico_enable_stdio_usb(${PROGRAM_NAME} TRUE)
