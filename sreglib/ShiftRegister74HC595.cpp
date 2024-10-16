@@ -6,5 +6,5 @@
   For usage see /example/example.cpp in this repository
 */
 
-#include "ShiftRegister74HC595.h"
+#include "ShiftRegister74HC595.hpp"
 #include "pico/stdlib.h"

@@ -5,7 +5,7 @@ else()
     set(USERHOME $ENV{HOME})
 endif()
 set(sdkVersion 2.0.0)
-set(toolchainVersion 13_3_Rel1)
+set(toolchainVersion 13_2_Rel1)
 set(picotoolVersion 2.0.0)
 set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
 if (EXISTS ${picoVscode})
@@ -32,7 +32,7 @@ execute_process(COMMAND
 )
 
 add_executable(${PROGRAM_NAME}
-    main.c
+    main.cpp
 )
 
 target_include_directories(${PROGRAM_NAME} PRIVATE
